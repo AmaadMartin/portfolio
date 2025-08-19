@@ -31,7 +31,6 @@ function generate() {
     .filter((d) => d.isFile())
     .map((d) => d.name)
     .filter(isPlayableAudio)
-    .sort();
 
   const tracks = files.map((name) => ({
     fileName: name,
