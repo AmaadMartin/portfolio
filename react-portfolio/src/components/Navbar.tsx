@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaFileAlt, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +26,10 @@ const Navbar: React.FC = () => {
 
   const CloseIcon = FaTimes as unknown as React.FC<{ className?: string }>;
   const MenuIcon = FaBars as unknown as React.FC<{ className?: string }>;
+  const FileIcon = FaFileAlt as unknown as React.FC<{ className?: string }>;
+  const GithubIcon = FaGithub as unknown as React.FC<{ className?: string }>;
+  const LinkedinIcon = FaLinkedin as unknown as React.FC<{ className?: string }>;
+  const TwitterIcon = FaTwitter as unknown as React.FC<{ className?: string }>;
 
   return (
     <motion.nav
@@ -48,7 +52,21 @@ const Navbar: React.FC = () => {
                 {item.label}
               </button>
             ))}
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ color: '#fff' }}>Resume</a>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg flex items-center gap-2" style={{ color: '#fff' }}>
+              <FileIcon />
+              Resume
+            </a>
+            <div className="flex items-center gap-3">
+              <a href="https://linkedin.com/in/amaadmartin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="btn btn-secondary btn-lg flex items-center justify-center">
+                <LinkedinIcon />
+              </a>
+              <a href="https://github.com/amaadmartin" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="btn btn-secondary btn-lg flex items-center justify-center">
+                <GithubIcon />
+              </a>
+              <a href="https://twitter.com/amaadmartin" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="btn btn-secondary btn-lg flex items-center justify-center">
+                <TwitterIcon />
+              </a>
+            </div>
           </div>
 
           <button className="md:hidden text-2xl" style={{ color: '#fff' }} onClick={() => setIsOpen(v => !v)}>
@@ -72,7 +90,21 @@ const Navbar: React.FC = () => {
                 {item.label}
               </button>
             ))}
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary block w-full text-center" style={{ color: '#fff' }}>Resume</a>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg block w-full text-center flex items-center justify-center gap-2" style={{ color: '#fff' }}>
+              <FileIcon />
+              Resume
+            </a>
+            <div className="flex items-center justify-center gap-4 pt-2">
+              <a href="https://linkedin.com/in/amaadmartin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="btn btn-secondary flex items-center justify-center">
+                <LinkedinIcon />
+              </a>
+              <a href="https://github.com/amaadmartin" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="btn btn-secondary flex items-center justify-center">
+                <GithubIcon />
+              </a>
+              <a href="https://twitter.com/amaadmartin" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="btn btn-secondary flex items-center justify-center">
+                <TwitterIcon />
+              </a>
+            </div>
           </div>
         </motion.div>
       </div>

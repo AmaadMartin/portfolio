@@ -11,7 +11,7 @@ const projects = [
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="section" style={{ marginTop: '40px' }}>
+    <section id="projects" className="section" style={{ marginTop: '-85px', paddingTop: '0px' }}>
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
