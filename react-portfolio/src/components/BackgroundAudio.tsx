@@ -12,13 +12,6 @@ type Manifest = {
   tracks: Track[];
 };
 
-function shuffleArrayInPlace<T>(array: T[]): void {
-  for (let i = array.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
-
 /**
  * BackgroundAudio fetches a manifest of audio files from /music/manifest.json,
  * shuffles them, and plays through the list on loop. To comply with browser
@@ -41,9 +34,6 @@ const BackgroundAudio: React.FC = () => {
         if (!res.ok) throw new Error(`Failed to load manifest: ${res.status}`);
         const data = (await res.json()) as Manifest;
         const list = Array.isArray(data.tracks) ? [...data.tracks] : [];
-        if (list.length > 0) {
-          shuffleArrayInPlace(list);
-        }
         if (isMounted) {
           setTracks(list);
           setCurrentIndex(0);
