@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Buttons (force normal flow with `static`) */}
-            <div className="btn btn-glass btn-lg flex items-center gap-9" style={{marginLeft: 37, marginTop: 10}}>
+            <div className="btn btn-glass btn-lg flex items-center gap-9" style={{marginLeft: 43, marginTop: 10}}>
               <a
                 href="https://github.com/amaadmartin"
                 target="_blank"
@@ -60,11 +60,11 @@ const Hero: React.FC = () => {
           >
             <div>
               <h2 className="text-2xl font-bold gradient-text" style={{textAlign: 'center'}}>DoidVerse</h2>
-              <p className="text-gray-300 mt-2 max-w-prose" style={{fontSize: 14}}>
-                Neural Evolution Simulator. NEAT Algorithm implemented. Cellular-automata used for procedural worldgen. Built with Unity.
+              <p className="text-gray-300 mt-2 max-w-prose" style={{fontSize: 14, textAlign: 'center'}}>
+                Live Simulation of NEAT (NeuroEvolution of Augmenting Topologies). Cellular-automata used for procedural worldgen. Built with Unity.
               </p>
             </div>
-            <div className="pt-3 text-right">
+            <div className="pt-3 text-right" style={{textAlign: 'center'}}>
               <a href="https://amaadmartin.github.io/doidVerse/" target="_blank" rel="noopener noreferrer" className="text-sm text-accent hover-text-accent">Open local demo</a>
             </div>
             <iframe
