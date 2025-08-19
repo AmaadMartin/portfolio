@@ -73,7 +73,7 @@ const Carousel: React.FC<{ projects: ProjectItem[] }> = ({ projects }) => {
       <div
         ref={containerRef}
         className="carousel"
-        style={{ marginTop: -45 }}
+        style={{ marginTop: -8 }}
       >
         {projects.map((p, i) => (
           <motion.a

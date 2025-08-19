@@ -120,14 +120,24 @@ const BackgroundAudio: React.FC = () => {
   if (!tracks.length) return null;
 
   return (
-    <>
+    <div
+      style={{
+        position: 'fixed',
+        top: 24,
+        right: 24,
+        zIndex: 100,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-end',
+      }}
+    >
       <audio ref={audioRef} style={{ display: 'none' }} playsInline />
       <button
         type="button"
         onClick={toggleMute}
         aria-label={isMuted ? 'Unmute background music' : 'Mute background music'}
         className="btn btn-secondary w-10 h-10 rounded-full"
-        style={{color: '#fff', outline: 'none', boxShadow: 'none' }}
+        style={{ color: '#fff', outline: 'none', boxShadow: 'none' }}
         title={isMuted ? 'Unmute' : 'Mute'}
       >
         {isMuted ? (
@@ -136,10 +146,10 @@ const BackgroundAudio: React.FC = () => {
           <VolumeUpIcon />
         )}
       </button>
-      <div style={{ fontSize: 12, color: '#bbb', marginTop: 2, justifyContent: 'left' }}>
+      <div style={{ fontSize: 12, color: '#bbb', marginTop: 2, textAlign: 'right'}}>
         All music produced by me
       </div>
-    </>
+    </div>
   );
 };
 
