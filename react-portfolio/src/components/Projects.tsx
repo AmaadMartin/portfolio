@@ -6,7 +6,7 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 const projects = [
   { id: 'artemis', title: 'Artemis Gen', desc: 'Automated deal sourcing using AI agents + deep web scraping. Input ICP → lead database.', url: 'https://artemis-gen.com', img: '/images/projects/Artemis.jpg' },
   { id: 'aether', title: 'The Aether', desc: 'LLM infra for prompt version control and testing. SDK + Web UI.', url: 'https://www.the-aether.com/', img: '/images/projects/aether.png' },
-  { id: 'practice-pal', title: 'Practice Pal', desc: 'Generate practice exams from notes/materials using an AI agent.', url: 'https://www.practice-pal.com', img: '/images/projects/PracticePal.png' },
+  { id: 'practice-pal', title: 'Practice Pal', desc: 'Generate practice exams from class notes/materials using an AI agent.', url: 'https://www.practice-pal.com', img: '/images/projects/PracticePal.png' },
 ];
 
 const Projects: React.FC = () => {
