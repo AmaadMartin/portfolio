@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --accent-500: #667eea;
+  --accent-400: #764ba2;
+  --bg-start: #0a0a0a;
+  --bg-mid: #1a1a2e;
+  --bg-end: #16213e;
+  --accent-shadow: rgba(102, 126, 234, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-start);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.App {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 50%, var(--bg-end) 100%);
+}
+
+main {
+  position: relative;
+  z-index: 2;
+}
+
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+/* Carousel layout to ensure horizontal scrolling */
+.carousel {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  justify-content: center; /* center cards when content doesn't overflow */
+}
+
+.carousel-card {
+  border-radius: 16px;
+  overflow: hidden;
+  min-width: 260px;
+  max-width: 260px;
+  scroll-snap-align: start;
+}
+
+/* Maintain perfect squares for images */
+.square {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* 1:1 aspect ratio */
+  overflow: hidden;
+}
+.square img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gradient-text {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: #fff !important;
+  color: #fff !important;
+  background-clip: initial !important;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-500) 0%, var(--accent-400) 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px var(--accent-shadow);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--accent-500);
+  border: 2px solid var(--accent-500);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-500);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.text-accent {
+  color: #fff !important;
+}
+
+/* Clear glass button for transparent look */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px var(--accent-shadow);
+}
+
+.hover-text-accent:hover {
+  color: var(--accent-400);
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+}
+
+/* Profile image sizing */
+.avatar {
+  width: 120px;
+  height: 120px;
+}
+
+@media (min-width: 768px) {
+  .avatar {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* Ensure side-by-side layout without relying on Tailwind responsive utilities */
+/* Robust side-by-side layout for the hero header */
+.hero-row {
+  display: flex;
+  gap: 2.5rem; /* ~gap-10 */
+  align-items: flex-start;
+  justify-content: space-between; /* push right panel to the right */
+}
+.hero-left {
+  flex: 0 0 auto; /* keep natural width */
+}
+.hero-right {
+  flex: 0 1 560px; /* keep to a nice readable width */
+  max-width: 560px;
+  width: 100%;
+  margin-left: auto; /* anchor to right */
+}
+@media (max-width: 768px) {
+  .hero-row {
+    flex-direction: column;
+  }
+}
