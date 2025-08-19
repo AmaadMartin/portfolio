@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
               <a href="https://amaadmartin.github.io/doidVerse/" target="_blank" rel="noopener noreferrer" className="text-sm text-accent hover-text-accent">Open full demo</a>
             </div>
             <iframe
-              src="exit"
+              src="https://doidverse.the-aether.com/"
               style={{ width: '100%', height: '40vh', border: 0 }}
               allow="clipboard-read; clipboard-write; fullscreen"
               // referrerPolicy="no-referrer"
