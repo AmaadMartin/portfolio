@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
             <div>
               <h2 className="text-2xl font-bold gradient-text" style={{textAlign: 'center'}}>DoidVerse</h2>
               <p className="text-gray-300 mt-2 max-w-prose" style={{fontSize: 14, textAlign: 'center'}}>
-                Live Simulation of NEAT (NeuroEvolution of Augmenting Topologies). Cellular-automata used for procedural worldgen. Built with Unity.
+                Live Neural Evolution Simulator. Cellular-automata used for procedural worldgen. Built with Unity.
               </p>
             </div>
             <div className="pt-3 text-right" style={{textAlign: 'center'}}>
